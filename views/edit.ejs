@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+</head>
+<body>
+    <h1>Edit Book</h1>
+    <!-- method is post because we are in html world and that -->
+    <form action="/books/<%=book._id%>?_method=PUT" method="post">
+        Title: <input type="text" name="title" value="<%=book.title%>">
+        Author: <input type="text" name="author" value="<%=book.author%>">
+        <!-- <%= book.completed && "checked" %>  -->
+        Completed: <input type="checkbox" name="completed" <%= book.completed && "checked" %> >
+        <input type="submit" value="Update!">
+    </form>
+    
+</body>
+</html>
